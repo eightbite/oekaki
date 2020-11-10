@@ -21,7 +21,7 @@
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "ルーム作成", '#', class: :nav__btn %>
+              <%= link_to "ルーム作成", new_room_path, class: :nav__btn %>
             </div>
           <%# // ログインしているときの表示 %>
           <%# ログインしていないときの表示 %>
