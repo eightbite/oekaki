@@ -12,10 +12,13 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(rooms_parameters)
     if @room.save
-      redirect_to root_path
+      redirect_to room_path(@room.id)
     else
       render :new
     end
+  end
+
+  def show
   end
 
   private
