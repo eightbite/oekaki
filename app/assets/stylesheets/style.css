@@ -290,6 +290,19 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+/* お絵かき機能 */
+.draw {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.canvas {
+  background-color: #ffffff;
+}
+.delete-button {
+
+}
 /* フッター */
 
 .footer {
