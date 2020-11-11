@@ -20,6 +20,9 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+  def destroy
+    @room.destroy
+    redirect_to root_path
   end
 
   private
