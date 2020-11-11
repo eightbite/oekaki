@@ -17,27 +17,44 @@
           <div class="nav__left">
             <%= link_to "お絵かき!(仮)", root_path %>
           </div>
-          <%# ログインしているときの表示%>
-          <% if user_signed_in? %>
+          <% if current_page?(room_path)%>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "ルーム作成", new_room_path, class: :nav__btn %>
+              <%= "#{@room.id} " %>
+              <%= "ルーム名 : #{@room.name}" %>
             </div>
-          <%# // ログインしているときの表示 %>
-          <%# ログインしていないときの表示 %>
+            <div class="nav__right">
+              <%= "目的 : #{@room.purpose.name}" %>
+            </div>
+            <div class="nav__right">
+              <% if current_user.id == @room.user_id %>
+                <%= link_to "ルーム削除", "#", method: :delete, class: :nav__logout %>
+              <% else %>
+                <%= link_to "ルーム退出",root_path, class: :nav__btn%>
+              <% end %>
+            </div>
           <% else %>
-            <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
-          <% end %>
+          <%# ログインしているときの表示%>
+            <% if user_signed_in? %>
+              <div class="nav__right">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+                <%= link_to "ルーム作成", new_room_path, class: :nav__btn %>
+              </div>
+            <%# // ログインしているときの表示 %>
+            <%# ログインしていないときの表示 %>
+            <% else %>
+              <div class="nav__right">
+                <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+                <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              </div>
+            <% end %>
+          <% end%>
           <%# // ログインしていないときの表示 %>
         </div>
       </div>
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">oekaki app.</p>
     </footer>
   </body>
 </html>
