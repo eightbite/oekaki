@@ -17,7 +17,7 @@
           <div class="nav__left">
             <%= link_to "お絵かき!(仮)", root_path %>
           </div>
-          <% if current_page?(room_path)%>
+          <% unless current_page?(new_room_path) || current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
             <div class="nav__right">
               <%= "#{@room.id} " %>
               <%= "ルーム名 : #{@room.name}" %>
@@ -27,14 +27,14 @@
             </div>
             <div class="nav__right">
               <% if current_user.id == @room.user_id %>
-                <%= link_to "ルーム削除", "#", method: :delete, class: :nav__logout %>
+                <%= link_to "ルーム削除", room_path, method: :delete, class: :nav__logout %>
               <% else %>
                 <%= link_to "ルーム退出",root_path, class: :nav__btn%>
               <% end %>
             </div>
           <% else %>
-          <%# ログインしているときの表示%>
             <% if user_signed_in? %>
+            <%# ログインしているときの表示%>
               <div class="nav__right">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
                 <%= link_to "ルーム作成", new_room_path, class: :nav__btn %>
@@ -47,7 +47,7 @@
                 <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
               </div>
             <% end %>
-          <% end%>
+          <% end %>
           <%# // ログインしていないときの表示 %>
         </div>
       </div>
