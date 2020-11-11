@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, except: :index 
+  before_action :set_room, only: [:show, :destroy]
 
   def index
     @rooms = Room.all
@@ -19,13 +20,21 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
+  end
+
+  def destroy
+    @room.destroy
+    redirect_to root_path
   end
 
   private
 
   def rooms_parameters
     params.require(:room).permit(:name, :purpose_id, :password).merge(user_id: current_user.id)
+  end
+
+  def set_room
+    @room = Room.find(params[:id])
   end
 
 end
