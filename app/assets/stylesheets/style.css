@@ -292,16 +292,61 @@ a {
 }
 
 /* お絵かき機能 */
-.draw {
+.drawing {
   display: flex;
   justify-content: center;
+}
+.draw {
   margin: 50px;
 }
 .canvas {
   background-color: #ffffff;
 }
-.delete-button {
-
+.ui-button{
+  margin-top: 50px;
+}
+.ui-image {
+  width: 10px;
+  height: 10px;
+}
+.eraser-button {
+  background-color: white;
+}
+.black {
+  background-color: black;
+  color: white;
+}
+.red {
+  background-color: red;
+  color: black;
+}
+.pink {
+  background-color: pink;
+  color: black;
+}
+.orange {
+  background-color: orange;
+  color: black;
+}
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+.green {
+  background-color: green;
+  color: black;
+}
+.light-blue {
+  background-color: lightblue;
+  color: black;
+}
+.blue {
+  background-color: blue;
+  color: white;
+}
+.purple {
+  background-color: purple;
+  color: white;
 }
 /* フッター */
 
