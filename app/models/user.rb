@@ -10,5 +10,7 @@ class User < ApplicationRecord
     validates :nickname
     validates :image
   end
+
+  has_one :room
   
 end

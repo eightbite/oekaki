@@ -78,7 +78,6 @@
 | Column      | Type    | Option     |
 | ----------- | ------- | ---------- |
 | name        | string  | null:false |
-| room_number | string  | null:false |
 | password    | string  |            |
 | purpose_id  | integer | null:false |
 
