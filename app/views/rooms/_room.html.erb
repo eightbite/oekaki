@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= "ルーム名 : #{room.name}" %>
     <p class="card__summary">
-      <%= "目的 : #{room.purpose.name}" %>
+      <%="目的 : #{room.purpose.name}" %>
     </p>
     <%= link_to "by #{room.user.nickname}", "#", class: :card__user %>
   </div>
