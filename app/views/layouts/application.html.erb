@@ -14,9 +14,14 @@
     <header class="header">
       <div class="inner">
         <div class="nav">
-          <div class="nav__left">
-            <%= link_to "お絵かき!(仮)", root_path %>
-          </div>
+          <% if user_signed_in? %>
+            <%= link_to image_tag(current_user.image, class: :icon__img), "#" %>
+          <% end %>
+          <% if current_page?(new_room_path) || current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+            <div class="nav__left">
+              <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            </div>
+          <% end %>
           <% unless current_page?(new_room_path) || current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
             <div class="nav__right">
               <%= "#{@room.id} " %>

@@ -1,10 +1,13 @@
 <div class="card">
-  <%= link_to image_tag(room.user.image, class: :card__img), room_path(room.id) %>
+  <%= image_tag(room.user.image, class: :card__img) %>
   <div class="card__body">
-    <%= link_to room.name, room_path(room.id), class: :card__title%>
+    <%= "ルーム名 : #{room.name}" %>
     <p class="card__summary">
-      <%= room.purpose.name %>
+      <%= "目的 : #{room.purpose.name}" %>
     </p>
     <%= link_to "by #{room.user.nickname}", "#", class: :card__user %>
+  </div>
+  <div>
+    <%= link_to "参加する", room_path(room.id), class: :nav__btn %>
   </div>
 </div>

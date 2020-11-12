@@ -1,15 +1,7 @@
 <main class="main">
   <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-    <% if user_signed_in? %>
-      <div class="greeting">
-        こんにちは、
-        <%= link_to current_user.nickname, "#", class: :greeting__link%>
-      </div>
-    <% end %>
-    <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
-    <%# ルーム作成機能実装後、部分テンプレートでルーム一覧を表示する %>
+    <%# 部分テンプレートでルーム一覧を表示する %>
     <%= render partial: "room", collection: @rooms %>
     </div>
   </div>
