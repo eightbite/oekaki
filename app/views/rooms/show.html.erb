@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="css/colorjoe.css">
-
+<div class = "nav-rooms">
+  <div class="nav-room">
+    <%= "ルーム番号 : #{@room.id}" %>
+  </div>
+  <div class="nav-room">
+    <%= "ルーム名 : #{@room.name}" %>
+  </div>
+  <div class="nav-room">
+    <%= "目的 : #{@room.purpose.name}" %>
+  </div>
+</div>
 <div class = "drawing">
   <div class = "draw">
     <canvas
