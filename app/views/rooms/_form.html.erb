@@ -14,12 +14,7 @@
     <span class="indispensable">必須</span>
   <%= f.collection_select(:purpose_id, Purpose.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
   </div>
-        
-  <%# <div class="field"> %>
-    <%#= f.label :password, "秘密の言葉(任意)" %><%#br />
-    <%#= f.text_area :password, class: :form__text %>
-  <%# </div> %>
-
+  
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
