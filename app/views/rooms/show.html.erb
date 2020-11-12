@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="css/colorjoe.css">
+
 <div class = "nav-rooms">
+  <div class="nav__delete">
+    <% if current_user.id == @room.user_id %>
+      <%= link_to "ルーム削除", room_path, method: :delete, class: :nav__logout %>
+    <% else %>
+      <%= link_to "ルーム退出",root_path, class: :nav__btn%>
+    <% end %>
+  </div>
   <div class="nav-room">
     <%= "ルーム番号 : #{@room.id}" %>
   </div>

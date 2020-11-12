@@ -81,6 +81,8 @@ a {
   color: #511800;
   text-decoration: none;
   user-select: none;
+  border: 1px #511800 solid;
+  border-radius: 3px;
 }
 .nav__logout:hover{
   opacity: 0.5;
@@ -195,8 +197,10 @@ a {
 }
 
 /* お絵かき機能 */
+.nav__delete {
+  margin-left: 45px;
+}
 .nav-rooms {
-  position: absolute;
   margin-top: 50px;
 }
 .nav-room {
@@ -207,7 +211,7 @@ a {
   justify-content: center;
 }
 .draw {
-  margin: 50px;
+  margin: 20px 5px 30px 50px;
 }
 .canvas {
   background-color: #ffffff;
@@ -291,7 +295,7 @@ a {
  /* スマホ表示 */
 @media (max-width: 599px) {
   .logo {
-    width: 120px;
+    width: 200px;
   }
   .page-heading {
     font-size: 20px;
