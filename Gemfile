@@ -69,3 +69,5 @@ group :production do
 end
 
 gem 'rename'
+
+gem "aws-sdk-s3", require: false
